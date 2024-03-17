@@ -9,13 +9,13 @@ public class Reptil extends Animal {
 	private String colorEscamas;
 	private int largoCola;
 	
-	
+
 	public Reptil() {
 		totalAnimales ++;
 		listado.add (this);
 	}
-	public Reptil(String nombre, int edad, String habitad, String genero, String colorEscamas, int largoCola) {
-		super( nombre, edad,habitad,genero);
+	public Reptil(String nombre, int edad, String habitat, String genero, String colorEscamas, int largoCola) {
+		super( nombre, edad,habitat,genero);
 		listado.add(this);
 		this.colorEscamas=colorEscamas;
 		this.largoCola=largoCola;
@@ -25,13 +25,13 @@ public class Reptil extends Animal {
 		return listado.size();
 	}
 	
-	public static Reptil crearIguanas(String nombre,int edad,String genero ){
+	public static Reptil crearIguana(String nombre,int edad,String genero ){
 		iguanas++;
 		return  new Reptil(nombre, edad, "humedal", genero, "verde", 3);
 	}
 	
 	
-	public static Reptil crearSerpientes(String nombre,int edad,String genero ){
+	public static Reptil crearSerpiente(String nombre,int edad,String genero ){
 		serpientes ++;
 		return  new Reptil(nombre, edad, "jungla", genero, "blanco", 1);
 	}
