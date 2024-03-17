@@ -1,17 +1,15 @@
 package zooAnimales;
-import java.util.Arrays;
 
 import gestion.Zona;
-import gestion.Zoologico;
 
 public class Animal {
 	
 	static int totalAnimales;
 	private String nombre;
 	private int edad;
-	private String habitad;
+	private String habitat;
 	private String genero;
-	private Zona[] zona;
+	private Zona zona;
 	
 	public Animal(){
 		totalAnimales ++;
@@ -20,7 +18,7 @@ public class Animal {
 	public Animal(String nombre, int edad, String habitad, String genero){
 		this.nombre=nombre;
 		this.edad=edad;
-		this.habitad=habitad;
+		this.habitat=habitad;
 		this.genero=genero;
 		totalAnimales ++;
 	}
@@ -48,8 +46,12 @@ public class Animal {
 
 	@Override
 	public String toString() {
-		return "Mi nombre es " +nombre +" tengo una edad de " + edad + "habito en" + habitad + " y mi genero es" + genero;
+		if(zona== null) {
+		return "Mi nombre es " +this.getNombre() +" tengo una edad de " + this.getEdad() + "habito en" + this.getHabitat() + " y mi genero es" + this.getGenero();
+		}
+		else {return "Mi nombre es " +this.getNombre() +" tengo una edad de " + this.getEdad() + "habito en" + this.getHabitat() + " y mi genero es" + this.getGenero() + ", lazona en la que me ubico es "+ this.zona.getNombre()+", en el "+ this.zona.getZoo();}
 	}
+	
 
 	public static int getTotalAnimales() {
 		return totalAnimales;
@@ -75,12 +77,12 @@ public class Animal {
 		this.edad = edad;
 	}
 
-	public String getHabitad() {
-		return habitad;
+	public String getHabitat() {
+		return habitat;
 	}
 
-	public void setHabitad(String habitad) {
-		this.habitad = habitad;
+	public void setHabitat(String habitad) {
+		this.habitat = habitad;
 	}
 
 	public String getGenero() {
@@ -91,11 +93,11 @@ public class Animal {
 		this.genero = genero;
 	}
 
-	public Zona[] getZona() {
+	public Zona getZona() {
 		return zona;
 	}
 
-	public void setZona(Zona[] zona) {
+	public void setZona(Zona zona) {
 		this.zona = zona;
 	}
 	
