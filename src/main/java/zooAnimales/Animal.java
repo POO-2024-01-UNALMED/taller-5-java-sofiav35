@@ -1,5 +1,4 @@
 package zooAnimales;
-
 import gestion.Zona;
 
 public class Animal {
@@ -24,19 +23,7 @@ public class Animal {
 	}
 	
 	public String movimiento(){
-	    if(this instanceof Anfibio){
-	    	return "saltar";
-	    	}
-	    else if(this instanceof Ave){
-	    	return "volar";
-	    	}
-	    else if(this instanceof Reptil){
-	    	return "reptar";
-	    	}
-	    else if(this instanceof Pez){
-	    	return "nadar";
-	    	}
-	    else return "desplazarse";
+	    return "desplazarse";
 	}
 	
 	
@@ -46,12 +33,17 @@ public class Animal {
 
 	@Override
 	public String toString() {
-		if(zona== null) {
-		return "Mi nombre es " +this.getNombre() +" tengo una edad de " + this.getEdad() + "habito en" + this.getHabitat() + " y mi genero es" + this.getGenero();
-		}
-		else {return "Mi nombre es " +this.getNombre() +" tengo una edad de " + this.getEdad() + "habito en" + this.getHabitat() + " y mi genero es" + this.getGenero() + ", lazona en la que me ubico es "+ this.zona.getNombre()+", en el "+ this.zona.getZoo();}
+    	if (zona != null) {
+    		return "Mi nombre es " + this.getNombre() + ", tengo una edad de " + this.getEdad() + ", habito en " + this.getHabitat() + " y mi genero es " + this.getGenero() + ", la zona en la que me ubico es " + this.zona.getNombre() + ", en el " + this.zona.getZoo();
+    	} else {
+    		return "Mi nombre es " + this.getNombre() + ", tengo una edad de " + this.getEdad() + ", habito en " + this.getHabitat() + " y mi genero es " + this.getGenero();
+    	}
+    	
+    }
+
+	public void setHabitat(String habitat) {
+		this.habitat = habitat;
 	}
-	
 
 	public static int getTotalAnimales() {
 		return totalAnimales;
@@ -81,7 +73,7 @@ public class Animal {
 		return habitat;
 	}
 
-	public void setHabitat(String habitad) {
+	public void setHabitad(String habitad) {
 		this.habitat = habitad;
 	}
 

@@ -1,5 +1,4 @@
 package zooAnimales;
-
 import java.util.ArrayList;
 
 public class Anfibio extends Animal {
@@ -12,16 +11,21 @@ public class Anfibio extends Animal {
 	
 	
 	public Anfibio() {
-		totalAnimales ++;
-		listado.add (this);
+		listado.add(this);
 	}
-	public Anfibio(String nombre, int edad, String habitat, String genero, String colorPiel, boolean venenoso) {
-		super( nombre, edad,habitat,genero);
+	public Anfibio(String nombre, int edad, String habitad, String genero, String colorPiel, boolean venenoso) {
+		super( nombre, edad,habitad,genero);
 		listado.add(this);
 		this.colorPiel=colorPiel;
 		this.venenoso=venenoso;
 	}
 	
+	public static ArrayList<Anfibio> getListado() {
+		return listado;
+	}
+	public static void setListado(ArrayList<Anfibio> listado) {
+		Anfibio.listado = listado;
+	}
 	public static int cantidadAnfibios() {
 		return listado.size();
 	}
@@ -48,7 +52,8 @@ public class Anfibio extends Animal {
 	public void setVenenoso(boolean venenoso) {
 		this.venenoso = venenoso;
 	}
-	
-
+	public String movimiento() {
+		return "saltar";
+	}
 
 }
